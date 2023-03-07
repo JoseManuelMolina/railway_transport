@@ -19,7 +19,7 @@ public class TrainController {
     TrainRepository trainRepository;
 
     @GetMapping("/trains")
-    public ResponseEntity<List<Train>> getAllTrains(@PathVariable int num){
+    public ResponseEntity<List<Train>> getAllTrains(){
         return new ResponseEntity<>(trainRepository.findAll(), HttpStatus.OK);
 //        return new ResponseEntity<>(trainRepository.findTrainsBySeatsTotalGreaterThan(num), HttpStatus.OK);
     }

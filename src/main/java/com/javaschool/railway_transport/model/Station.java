@@ -19,10 +19,6 @@ public class Station {
     @OneToMany(mappedBy = "station")
     private Set<Schedule> schedules;
 
-    @OneToMany(mappedBy = "station")
-    private Set<Stations> stations;
-
-
     public Station() {
     }
 

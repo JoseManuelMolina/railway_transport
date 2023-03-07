@@ -22,8 +22,6 @@ public class Train {
     @OneToMany(mappedBy = "train")
     private Set<Schedule> schedules;
 
-    @OneToMany(mappedBy = "train")
-    private Set<Stations> stations;
 
     @OneToMany(mappedBy = "train")
     Set<Ticket> tickets;
@@ -32,12 +30,11 @@ public class Train {
 
     }
 
-    public Train(Long number, int seatsTotal, int seatsOccupied, Set<Schedule> schedules, Set<Stations> stations, Set<Passenger> ticket) {
+    public Train(Long number, int seatsTotal, int seatsOccupied, Set<Schedule> schedules, Set<Passenger> ticket) {
         this.number = number;
         this.seatsTotal = seatsTotal;
         this.seatsOccupied = seatsOccupied;
         this.schedules = schedules;
-        this.stations = stations;
     }
 
     public Long getNumber() {
@@ -70,14 +67,6 @@ public class Train {
 
     public void setSchedules(Set<Schedule> schedules) {
         this.schedules = schedules;
-    }
-
-    public Set<Stations> getStations() {
-        return stations;
-    }
-
-    public void setStations(Set<Stations> stations) {
-        this.stations = stations;
     }
 
 }
