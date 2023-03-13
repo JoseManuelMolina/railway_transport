@@ -12,7 +12,7 @@ public class Ticket {
 
     @ManyToOne
     @MapsId("train_number")
-    @JoinColumn(name = "train_id")
+    @JoinColumn(name = "train_number")
     Train train;
 
     @ManyToOne
@@ -20,13 +20,12 @@ public class Ticket {
     @JoinColumn(name = "passenger_id")
     Passenger passenger;
 
-    LocalDate date_time_buy;
 
-    public Ticket(TicketKey ticketKey, Train train, Passenger passenger, LocalDate date_time_buy) {
+
+    public Ticket(TicketKey ticketKey, Train train, Passenger passenger) {
         this.ticketKey = ticketKey;
         this.train = train;
         this.passenger = passenger;
-        this.date_time_buy = date_time_buy;
     }
 
     public Ticket() {}
@@ -55,11 +54,4 @@ public class Ticket {
         this.passenger = passenger;
     }
 
-    public LocalDate getDate_time_buy() {
-        return date_time_buy;
-    }
-
-    public void setDate_time_buy(LocalDate date_time_buy) {
-        this.date_time_buy = date_time_buy;
-    }
 }

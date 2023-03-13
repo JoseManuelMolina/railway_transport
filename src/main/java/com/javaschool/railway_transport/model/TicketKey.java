@@ -4,6 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Objects;
 
 @Embeddable
@@ -15,12 +16,16 @@ public class TicketKey implements Serializable {
     @Column(name = "passenger_id")
     Long passenger_id;
 
+    @Column(name = "date_time_buy")
+    LocalDate date_time_buy;
+
     public TicketKey() {
     }
 
-    public TicketKey(Long train_number, Long passenger_id) {
+    public TicketKey(Long train_number, Long passenger_id, LocalDate date_time_buy) {
         this.train_number = train_number;
         this.passenger_id = passenger_id;
+        this.date_time_buy = date_time_buy;
     }
 
     public Long getTrain_number() {
@@ -39,15 +44,23 @@ public class TicketKey implements Serializable {
         this.passenger_id = passenger_id;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof TicketKey ticketKey)) return false;
-        return train_number.equals(ticketKey.train_number) && passenger_id.equals(ticketKey.passenger_id);
+    public LocalDate getDate_time_buy() {
+        return date_time_buy;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(train_number, passenger_id);
+    public void setDate_time_buy(LocalDate date_time_buy) {
+        this.date_time_buy = date_time_buy;
     }
+
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (!(o instanceof TicketKey ticketKey)) return false;
+//        return train_number.equals(ticketKey.train_number) && passenger_id.equals(ticketKey.passenger_id) && date_time_buy.equals(ticketKey.date_time_buy);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(train_number, passenger_id, date_time_buy);
+//    }
 }

@@ -30,11 +30,10 @@ public class Train {
 
     }
 
-    public Train(Long number, int seatsTotal, int seatsOccupied, Set<Schedule> schedules, Set<Passenger> ticket) {
+    public Train(Long number, int seatsTotal, int seatsOccupied) {
         this.number = number;
         this.seatsTotal = seatsTotal;
         this.seatsOccupied = seatsOccupied;
-        this.schedules = schedules;
     }
 
     public Long getNumber() {
@@ -59,14 +58,6 @@ public class Train {
 
     public void setSeatsOccupied(int seatsOccupied) {
         this.seatsOccupied = seatsOccupied;
-    }
-
-    public Set<Schedule> getSchedules() {
-        return schedules;
-    }
-
-    public void setSchedules(Set<Schedule> schedules) {
-        this.schedules = schedules;
     }
 
 }

@@ -32,8 +32,7 @@ public class Passenger {
     public Passenger() {
     }
 
-    public Passenger(Long id, String phone_number, String name, String surname, LocalDate date_birth) {
-        this.id = id;
+    public Passenger(String phone_number, String name, String surname, LocalDate date_birth) {
         this.phone_number = phone_number;
         this.name = name;
         this.surname = surname;
@@ -44,11 +43,11 @@ public class Passenger {
         return id;
     }
 
-    public String getPhone_number() {
+    public String getPhoneNumber() {
         return phone_number;
     }
 
-    public void setPhone_number(String phone_number) {
+    public void setPhoneNumber(String phone_number) {
         this.phone_number = phone_number;
     }
 
@@ -68,11 +67,11 @@ public class Passenger {
         this.surname = surname;
     }
 
-    public LocalDate getDate_birth() {
+    public LocalDate getDateBirth() {
         return date_birth;
     }
 
-    public void setDate_birth(LocalDate date_birth) {
+    public void setDateBirth(LocalDate date_birth) {
         this.date_birth = date_birth;
     }
 }
